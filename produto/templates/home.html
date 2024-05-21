@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+
+{% block 'conteudo'%}
+<div class="container">
+    <div class="row">
+
+    {% for produto in produtos %}
+
+        {% if produto.ativo %}
+      <div class="col-sm">
+        <div class="cont">
+            <img class="tamImg" style="margin-top: 20px;" src="/media/{{produto.img}}">
+        </div>
+        <h1 style="width: 350px;" class="nome titulo bordaBottom" style="text-align: center;">{{produto.nome_produto}}</h1>
+        <h2 style="width: 350px;"class="rosa"style="text-align: center;">Descrição:</h2>
+        <h2 style="width:350x; color: gray;" class="descricao bordaBottom" style="text-align: center;">{{produto.descricao}}</h5>
+        <h1 style="width: 350px;"class="rosa"style="text-align: center;">R$ {{produto.preco}}0</h1>
+        <br>
+        <a class="botao"style="width: 350px;" style="margin-top: 20px;"style="text-align: center;" href="{% url 'produto' produto.id%}">Adicionar ao carrinho</a>
+        <br>
+      </div>
+      {% endif %}
+      {% endfor %}  
+     
+    </div>
+  </div>
+{%endblock%}
