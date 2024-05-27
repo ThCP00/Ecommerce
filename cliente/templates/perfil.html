@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block 'conteudo' %}
+
+<form method="post" action="{% url 'salvar_perfil' %}">
+    {% csrf_token %}
+
+    <div class="form-group">
+        <label for="cep">CEP:</label>
+        <input type="text" class="form-control" id="cep" name="cep" required>
+    </div>    
+
+    <div class="form-group">
+        <label for="cpf">CPF:</label>
+        <input type="text" class="form-control" id="cpf" name="cpf" required>
+    </div>   
+
+    <div class="form-group">
+        <label for="telefone">Telefone:</label>
+        <input type="text" class="form-control" id="telefone" name="telefone" required>
+    </div> 
+
+<button type="submit" class="btn btn-primary">Salvar</button>
+
+
+</form>
+
+
+
+
+{% endblock %}
