@@ -7,6 +7,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('produto.urls')),
     path('usuario/', include('usuario.urls')),
+    path('cliente/', include('cliente.urls')),
+    path('pedido/', include('pedido.urls')),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
